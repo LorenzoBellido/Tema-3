@@ -28,7 +28,7 @@ public class Main {
 				finally {
 					sc.nextLine();
 				}
-			}while(opc < 0 || opc >= 6);
+			}while(opc < 0 || opc > 6);
 			// Devuelve la opcion
 			return opc;
 	}
