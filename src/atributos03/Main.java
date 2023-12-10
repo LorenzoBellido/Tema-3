@@ -27,50 +27,55 @@ public class Main {
 
 		return opc;
 	}
-	
+
 	public static double pideRadio() {
 		double numero = 0;
-		
+
 		do {
 			System.out.println("Introduzca el radio");
 			try {
 				numero = sc.nextDouble();
-			}catch(InputMismatchException e) {
+			} catch (InputMismatchException e) {
 				System.out.println("Valor introducido erróneo");
-			}
-			finally {
+			} finally {
 				sc.nextLine();
 			}
-		}while(numero <= 0);
-		
+		} while (numero <= 0);
+
 		return numero;
 	}
 
 	public static void main(String[] args) {
 		// Variables donde guardar la opcion, el radio y el resultado
 		int opc;
-		double radio,res;
-		
+		double radio, res;
+
 		// Llamamos a la función menu
 		opc = menu();
-		
-		// Llamamos a la función pideRadio
-		radio = pideRadio();
-		
-		// Creo el objeto Circulo
-		Circulo cir = new Circulo(radio);
-		
-		// Switch para cada opcion
-		switch(opc) {
-		case 1-> {
-			res = cir.circunferencia();
-			System.out.println("La circunferencia del círculo es: " + res);
-		}
-		case 2-> {
-			res = cir.area();
-			System.out.println("El área del círculo es: " + res);
-		}
-		default->System.out.println("Fin.");
+
+		// Bucle para seguir pidiendo el menú de opciones
+		while (opc > 0) {
+			
+			// Llamamos a la función pideRadio
+			radio = pideRadio();
+
+			// Creo el objeto Circulo
+			Circulo cir = new Circulo(radio);
+
+			// Switch para cada opcion
+			switch (opc) {
+			case 1 -> {
+				res = cir.circunferencia();
+				System.out.println("La circunferencia del círculo es: " + res);
+			}
+			case 2 -> {
+				res = cir.area();
+				System.out.println("El área del círculo es: " + res);
+			}
+			}
+
+			// Llamamos a la función menu
+			opc = menu();
 		}
 
 	}
