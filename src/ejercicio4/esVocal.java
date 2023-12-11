@@ -1,4 +1,4 @@
-package Ejercicio4;
+package ejercicio4;
 
 public class esVocal {
 	public static boolean esVocal(String c) {
